@@ -3,7 +3,7 @@ import {React} from 'react';
 
 const StateBox = ({title, value, increase, pastval}) => {
     return (
-        <Box width="100%" m="0 10px" p="10px" style={{ backgroundColor: "#FFFFFF", borderRadius: "10px" }}>
+        <Box m="10px" p="10px" width="100%" style={{ backgroundColor: "#FFFFFF", borderRadius: "10px" }}>
             <Box
                 display="flex"
                 justifyContent="space-between"

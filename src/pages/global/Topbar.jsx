@@ -6,9 +6,11 @@ import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 // import Badge from '@mui/material/Badge';
+import CompanyLogo from '../../components/companyLogo';
+import MenuIcon from '@mui/icons-material/Menu';
 
 
-const Topbar = () => {
+const Topbar = ({toggled, setToggled}) => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     return (
@@ -20,14 +22,18 @@ const Topbar = () => {
                 <InputBase placeholder="Search..."/>
             </Box>
 
-            <Box display="flex" flexDirection={isMobile ? 'column' : 'row'} sx={{ml:2}}>
+            <Box display="flex" flexDirection='row' justifyContent='space-between' sx={{ml:2}}>
                 {/* <Badge variant='dot' color="error" overlap='circular'>
                     <NotificationsNoneOutlinedIcon/>
                 </Badge> */}
+                {isMobile ? <CompanyLogo/> : null}
                 {isMobile ? null : <IconButton><NotificationsNoneOutlinedIcon/></IconButton>}
                 {isMobile ? null : <IconButton><CalendarTodayOutlinedIcon/></IconButton>}
                 {isMobile ? null : <IconButton><GridViewOutlinedIcon/></IconButton>}
-                <IconButton><AccountCircleOutlinedIcon/></IconButton>
+                <Box display="flex" justifyContent="center" alignItems="center">
+                    <IconButton><AccountCircleOutlinedIcon fontSize={isMobile ? 'large' : 'inherit'}/></IconButton>
+                    {isMobile ? <IconButton onClick={() => setToggled(!toggled)}><MenuIcon fontSize='large'/></IconButton> : null}
+                </Box>
             </Box>
         </Box>
     );

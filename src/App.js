@@ -1,4 +1,11 @@
 import CssBaseline from "@mui/material/CssBaseline";
+import {
+  Box,
+  IconButton,
+  InputBase,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import Topbar from "./pages/global/Topbar";
 import Sidebarx from "./pages/global/Sidebarx";
 import Dashboard from "./pages/dashboard/index";
@@ -9,6 +16,9 @@ import "./index.css";
 //import ReactDOM from "react-dom";
 
 function App() {
+  const [toggled, setToggled] = React.useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <div>
       <CssBaseline />
@@ -20,9 +30,11 @@ function App() {
           minHeight: "100vh",
         }}
       >
-        <Sidebarx />
+        <Box>
+          <Sidebarx toggled={toggled} setToggled={setToggled} />
+        </Box>
         <main className="content" style={{ width: "100%" }}>
-          <Topbar />
+          <Topbar setToggled={setToggled} toggled={toggled} />
           <Router>
             <Routes>
               <Route path="/" element={<Dashboard />} />

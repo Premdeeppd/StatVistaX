@@ -49,7 +49,7 @@ const InstalledApp = () => {
     {field:"Group",headerName:"Group",flex:1, headerAlign:"center", align:"center"}];
 
     return (
-        <div>
+        <div style={{width:'100%'}}>
             <Box m="20px 20px 0px 20px" p="10px" sx={{backgroundColor:"#FFFFFF", borderTopLeftRadius:"15px", borderTopRightRadius:"15px"}}>
                 <Typography sx={{fontSize:"14px", fontWeight:"600"}}>Installed Apps</Typography>
             </Box>

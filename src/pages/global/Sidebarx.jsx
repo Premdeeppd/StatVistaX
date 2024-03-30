@@ -9,16 +9,16 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
 import SupportOutlinedIcon from '@mui/icons-material/SupportOutlined';
 import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined';
-import logo from '../../assets/Logohere.png';
 import './global.css';
+import  CompanyLogo from '../../components/companyLogo';
+import {Box, IconButton, InputBase, useMediaQuery, useTheme} from '@mui/material';
 
-const Sidebarx = () => {
-    
+const Sidebarx = ({toggled, setToggled}) => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     return (
-        <Sidebar style={{backgroundColor:"#FFFFFF"}}>
-            <div className="logo-container">
-                <img src={logo} alt="Company Logo" /> 
-            </div>
+        <Sidebar style={{backgroundColor:"#FFFFFF"}} onBackdropClick={isMobile ? () => setToggled(false) : undefined} toggled={isMobile ? toggled : undefined} breakPoint={isMobile ? "always" : undefined}>
+            {isMobile ? null:<CompanyLogo/>}
             <Menu>
                 <h4 style={{ color:"#9D9FA1", marginLeft:"10%" }}>DASHBOARD</h4>
                 <SubMenu icon={<DonutSmallIcon/>} label="Dashbaord">

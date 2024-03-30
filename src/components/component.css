@@ -1,0 +1,11 @@
+.logo-container {
+    display: flex; /* Make it a flex container */
+    align-items: center; /* Vertically center the logo */
+    justify-content: left; /* Optionally center horizontally */
+    padding: 15px 0; 
+  }
+
+.logo-container img {
+    width: 120px;  /* Adjust as needed */
+    height: auto;  /* Maintain aspect ratio */
+}
