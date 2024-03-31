@@ -54,8 +54,8 @@ const InstalledApp = () => {
                 <Typography sx={{fontSize:"14px", fontWeight:"600"}}>Installed Apps</Typography>
             </Box>
             <Box m="1px 20px 20px 20px" style={{borderRadius:"15px", backgroundColor:"#FFFFFF"}}>
-                <Box 
-                style={{ height: 371, width: '100%' }} 
+                <Box
+                style={{ height: 371}} 
                 sx={{"& .MuiDataGrid-root":{
                     border:"none"
                 },
