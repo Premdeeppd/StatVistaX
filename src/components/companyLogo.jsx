@@ -7,7 +7,7 @@ const CompanyLogo = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     return (
-        <Box className="logo-container" marginLeft={isMobile ? "-15px" : "25px"} >
+        <Box className="logo-container" marginLeft={isMobile ? "-30px" : "10px"} >
             <img src={logo} alt="Company Logo" /> 
         </Box>
     );
